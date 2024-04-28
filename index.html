@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Fylo data storage component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+    :root {
+      --Pale-Blue: hsl(243, 100%, 93%);
+      --Grayish-Blue: hsl(229, 7%, 55%);
+      --Dark-Blue: hsl(228, 56%, 26%);
+      --Very-Dark-Blue: hsl(229, 57%, 11%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Raleway;
+      font-size: 14px;
+      background-image: url(./images/bg-mobile.png);
+      background-repeat: no-repeat;
+      height: 100vh;
+      display: grid;
+      place-items: center;
+    }
+
+    main {
+      display: grid;
+      grid-template-rows: 55% 45%;
+      grid-template-areas: "first" "second";
+      height: 60%;
+      width: 90%;
+      gap: 15px;
+    }
+
+    .first {
+      grid-area: first;
+      background-color: var(--Dark-Blue);
+      border-radius: 10px 100px 10px 10px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-evenly;
+    }
+
+    .logo {
+      margin-bottom: 30px;
+    }
+
+    .opt {
+      display: flex;
+    }
+
+    .doc img {
+      width: 20px;
+      height: 24px;
+    }
+
+    .fol img {
+      width: 24px;
+      height: 20px;
+    }
+
+    .up img {
+      width: 24px;
+      height: 16px;
+    }
+
+    .doc,
+    .fol,
+    .up {
+      background-color: var(--Very-Dark-Blue);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      margin-right: 15px;
+    }
+
+    .second {
+      grid-area: second;
+      background-color: var(--Dark-Blue);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 40px;
+    }
+
+    .fp {
+      margin-bottom: 10px;
+      color: white;
+      opacity: 0.8;
+    }
+
+    .fp span {
+      font-weight: bold;
+    }
+
+    .cloud {
+      background-color: white;
+      height: 70px;
+      width: 50%;
+      font-size: 40px;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      position: absolute;
+      bottom: 12%;
+    }
+
+    .cloud span {
+      color: var(--Grayish-Blue);
+      text-transform: uppercase;
+      font-size: 12px;
+      margin: 5px 0 0 10px;
+    }
+
+    .back {
+      margin-top: 10px;
+      height: 12%;
+      width: 100%;
+      border-radius: 20px;
+      background-color: var(--Very-Dark-Blue);
+      opacity: 0.6;
+      display: flex;
+      align-items: center;
+    }
+
+    .front {
+      position: relative;
+      left: 3px;
+      border-radius: 20px;
+      height: 70%;
+      width: calc(81.5% - 3px);
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      background-image: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    }
+
+    .dot {
+      position: relative;
+      right: 2px;
+      height: 80%;
+      width: 6%;
+      border-radius: 50%;
+      background-color: white;
+    }
+
+    .gb p {
+      font-weight: bold;
+    }
+
+    .gb {
+      width: 100%;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 5px;
+      font-size: 12px;
+      opacity: 0.8;
+    }
+
+    @media (min-width: 375px) {
+      body {
+        background-image: url(./images/bg-desktop.png);
+        background-position: bottom right;
+        background-color: var(--Very-Dark-Blue);
+      }
+
+      main {
+        grid-template-columns: 40% 60%;
+        grid-template-areas: "first second";
+        width: 60%;
+        gap: 25px;
+      }
+
+      .second {
+        height: 80%;
+        align-self: flex-end;
+      }
+
+      .fp {
+        align-self: flex-start;
+      }
+
+      .dot {
+        width: 3.2%;
+      }
+
+      .cloud {
+        width: 180px;
+        top: 20%;
+        right: 21.2%;
+      }
+
+      .cloud::after {
+        content: " ";
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 50px;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-right: 30px solid white;
+      }
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+      display: none;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="first">
+      <div class="logo"><img src="./images/logo.svg" alt="logo"></div>
+      <div class="opt">
+        <div class="doc">
+          <img src="./images/icon-document.svg" alt="document">
+        </div>
+        <div class="fol">
+          <img src="./images/icon-folder.svg" alt="folder">
+        </div>
+        <div class="up">
+          <img src="./images/icon-upload.svg" alt="upload">
+        </div>
+      </div>
+    </div>
+    <div class="second">
+      <p class="fp">You’ve used <span>815 GB</span> of your storage</p>
+
+      <div class="cloud">
+        185 <span>GB Left</span>
+      </div>
+
+      <div class="back">
+        <div class="front">
+          <div class="dot"></div>
+        </div>
+      </div>
+
+      <div class="gb">
+        <p>0 GB</p>
+        <p>1000 GB</p>
+      </div>
+
+    </div>
+  </main>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+
+</html>
